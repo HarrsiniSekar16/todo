@@ -1,0 +1,19 @@
+<!-- The button layout component to toggle view/add todo-->
+<div class="buttonlayout">
+    <button (click)="emit()">{{showBtn}} All</button>
+    <button type="submit" form="TodoForm" (click)="save()">Save</button>
+</div>
+<br>
+
+<!-- The layout component to add the todo to db -->
+<div class="center">
+    <form id="TodoForm" [formGroup]="addTodoForm">
+        <input type="text" formControlName="title" placeholder="Title" size="55">
+        <br>
+        <br>
+        <textarea formControlName="description" placeholder="Add description" rows="4" cols="52"></textarea>
+        <br>
+        <br> Due Date : <input type="date" formControlName="dueDate" [min]="currentDate" > &nbsp; Due Time :
+        <input type="time" formControlName="dueTime" >
+    </form>
+</div>

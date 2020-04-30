@@ -1,0 +1,8 @@
+<!-- NAV BAR -->
+<nav>
+    <div>Todo</div>
+</nav>
+<!-- ACCESSING MULTIPLE COMPONENTS-->
+<app-viewall *ngIf="showBtn == 'Add'" [showBtn]="showBtn" (show)="outputemit($event)"></app-viewall>
+<app-add-component *ngIf="showBtn == 'View'" [showBtn]="showBtn" (show)="outputemit($event)"></app-add-component>
+<router-outlet></router-outlet>
